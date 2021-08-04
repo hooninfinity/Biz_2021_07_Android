@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "815401382746",
+    "firebase_url": "https://hello-android-407c7-default-rtdb.firebaseio.com",
+    "project_id": "hello-android-407c7",
+    "storage_bucket": "hello-android-407c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815401382746:android:06d1504c661ba7c5a4f963",
+        "android_client_info": {
+          "package_name": "com.callor.chatt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "815401382746-eedf6le7hlmnr49s23r2rbek22qv4u3p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb9uuj7iPfB8kOMgNLqRcc0xjRdPXaXdo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "815401382746-eedf6le7hlmnr49s23r2rbek22qv4u3p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
