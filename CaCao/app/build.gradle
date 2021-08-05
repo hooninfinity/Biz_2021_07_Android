@@ -16,7 +16,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        minSdkVersion 24
+        minSdkVersion 25
+        targetSdkVersion 30
     }
 
     buildTypes {
@@ -56,6 +57,7 @@ dependencies {
     // 향후에 정식 서비스를 할때는 유료 서비스를 통해 사용할수 있다.
     // 안드로이드 폰 = firebase 형식의 구조가 가장 많이 사용된다.
     implementation 'com.google.firebase:firebase-database'
+    implementation 'androidx.preference:preference:1.1.1'
 
     testImplementation 'junit:junit:53'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
