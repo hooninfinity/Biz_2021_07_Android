@@ -68,7 +68,7 @@ public class BookViewAdapter extends RecyclerView.Adapter {
         // ViewHolder 객체를 생성하기
         BookItemHolder viewHolder = new BookItemHolder(view);
 
-        // 생성된 viiewHolder 객체를 RecyclerView에게 return하기
+        // 생성된 viewHolder 객체를 RecyclerView에게 return하기
         return viewHolder;
     }
 

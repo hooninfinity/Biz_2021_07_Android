@@ -1,5 +1,10 @@
 package com.callor.oneday_movie.config;
 
+/**
+ * Naver OpenAPI에 접근하기 위한 정보들 포함하는 클래스
+ * Naver OpenAPI 관련 정보를 변경한 후
+ * NaverAPI 로 변경하여 프로젝트를 빌드하시오
+ */
 public class NaverAPI_Sample {
 
     public static final String CLIENT_ID = "YOUR NAVER API ID";
