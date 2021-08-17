@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "134808581444",
+    "project_id": "todolist-342ad",
+    "storage_bucket": "todolist-342ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134808581444:android:4c788b9e4a6bc1cb32d311",
+        "android_client_info": {
+          "package_name": "com.hoon.todolist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "134808581444-3m2oag63v820f32fnmcfrq396pobs23p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyDWBO4YVL35wddsrJlUPGIBl0gQNtNz8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "134808581444-3m2oag63v820f32fnmcfrq396pobs23p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
