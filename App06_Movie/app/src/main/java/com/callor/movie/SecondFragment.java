@@ -40,6 +40,7 @@ public class SecondFragment extends Fragment {
             String movie_text = getArguments()
                     .getString("movie_search","없음");
             Log.d("검색문자열", movie_text);
+            // 리사이클러뷰를 보내주고, 그려라
             NaverAPIService naverAPIService
                     = new NaverMovieServiceImplV1(binding);
             naverAPIService.getNaverMovie(movie_text);

@@ -40,7 +40,7 @@ public class NaverMovieAdapter
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         NaverMovieViewHolder movieViewHolder
                 = (NaverMovieViewHolder) holder;
-
+        // 현재 위치에 있는 아이템을 끄집어내서,
         MovieDTO movieDTO = movieList.get(position);
         MovieItemViewBinding binding
                 = movieViewHolder.movieBinding;

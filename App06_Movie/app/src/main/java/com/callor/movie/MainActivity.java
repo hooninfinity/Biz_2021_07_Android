@@ -73,13 +73,19 @@ public class MainActivity extends AppCompatActivity {
         ActionBar에 구현된 검색창을 활성화 하기 위한 코드
         android.widget.SearchView를 사용하여 객체 생성
          */
+        // menu_main.xml 에 item으로 설정된 항목중에서
+        // SearchView 클래스가 지정된 item을 가져와서
+        // searchView 객체로 생성하기
         SearchView searchView
                 = (SearchView) menu.findItem(R.id.app_bar_search).getActionView();
         
         searchView.setMaxWidth(Integer.MAX_VALUE);
         searchView.setQueryHint("영화명 검색");
-        
-        // 검색창이 활성화 되었을때 실행되는 event
+
+        // 검색창에 문자열을 입력할때, 검색을 클릭했을때
+        // 반응하는 event
+
+        // 검색창이 활성화 되었을때(search icon 클릭) 실행되는 event 핸들러
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 
             // 키보드의 검색 버튼 클릭
@@ -109,6 +115,12 @@ public class MainActivity extends AppCompatActivity {
                     NavDirection 객체를 생성할때
                     매개변수로 전달한다.
                      */
+                    /*
+                    actionFir...To..SecondFragment()의 method에 값 주입하여
+                    SecondFragment로 값 전달하기
+                    nav_Graph.xml 에 설정된 argument 변수에 값을 세팅하는 것으로
+                    "defaultValue" 값을 없애고 매개변수로 값을 주입하여 전달한다
+                     */
                     NavDirections action
                             = FirstFragmentDirections.actionFirstFragmentToSecondFragment(query);
                     
@@ -119,6 +131,12 @@ public class MainActivity extends AppCompatActivity {
                                     MainActivity.this,
                                     R.id.nav_host_fragment_content_main
                             );
+
+                    // 만약 firstFragment 화면이 아닌 경우
+                    // SecondFragment 화면이 열려 있는 상태이면
+                    // 위로 가기를 한번 실행하고
+                    // 그리고 navigation을 이동하라
+                    controller.navigateUp();
                     controller.navigate(action);
                 }
 

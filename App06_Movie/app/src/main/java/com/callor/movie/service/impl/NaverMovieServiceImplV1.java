@@ -54,7 +54,9 @@ public class NaverMovieServiceImplV1 implements NaverAPIService {
                     Log.d("네이버에서 받은 데이터", naverParent.toString());
 
                     List<MovieDTO> movieList = naverParent.items;
+
                     adapter = new NaverMovieAdapter(movieList);
+                    // 생성된 친구를 연결. 이제 쭉쭉 연결만 하면 된다.
                     secondBinding.movieListView.setAdapter(adapter);
 
                     RecyclerView.LayoutManager
