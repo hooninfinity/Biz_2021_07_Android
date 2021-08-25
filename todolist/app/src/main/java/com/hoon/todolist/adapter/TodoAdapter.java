@@ -69,15 +69,23 @@ public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         View item_layout
                 = LayoutInflater.from( parent.getContext() )
                 .inflate(R.layout.todo_item,parent,false);
-
-
-
-
-        return null;
+        TodoViewHolder viewHolder
+                = new TodoViewHolder(item_layout);
+        return viewHolder;
     }
 
+    // todoVOList에서 한개의 데이터를 getter하여
+    // todo_item.xml파일과 함께 rendering을 수행할 method
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull
+                                             RecyclerView.ViewHolder holder, int position) {
+        // 전체 todoVOList에서 현재 화면에 그릴 item추출하기
+        TodoVO todoVO = todoVOList.get(position);
+        TodoViewHolder todoViewHolder
+                = (TodoViewHolder) holder;
+
+        // todo_item.xml 의 CheckBox 객체에 데이터를 담기
+        
 
     }
 
