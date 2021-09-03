@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -84,9 +85,8 @@ public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         TodoViewHolder todoViewHolder
                 = (TodoViewHolder) holder;
 
-        // todo_item.xml 의 CheckBox 객체에 데이터를 담기
-        
-
+        // todo_item.xml 의 TextView 객체에 데이터를 담기
+        todoViewHolder.item_msg.setText(todoVO.getMsg());
     }
 
     /**
@@ -103,10 +103,10 @@ public class TodoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public static class TodoViewHolder
             extends RecyclerView.ViewHolder {
 
-        public CheckBox item_msg;
+        public TextView item_msg;
 
         // 각 데이터를 표현하기 위한
-        // todo_item.xml의 view 객체(한개의 CheckBox) 를
+        // todo_item.xml의 view 객체(한개의 TextView) 를
         // 초기화(생성) 하는 method
         public TodoViewHolder(@NonNull View itemView) {
             super(itemView);
