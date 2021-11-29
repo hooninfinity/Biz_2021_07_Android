@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="?attr/actionBarSize"
     tools:context=".MainActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -28,5 +29,5 @@
         app:layout_constraintRight_toRightOf="parent"
         tools:layout="@layout/fragment_first"
         app:navGraph="@navigation/fragment_navigation"
-         />
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

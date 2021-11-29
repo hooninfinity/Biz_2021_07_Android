@@ -2,11 +2,12 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_navigation"
-    app:startDestination="@id/bottom_nav_home">
+    app:startDestination="@+id/bottom_nav_home" >
 
     <fragment android:id="@+id/bottom_nav_home"
-        android:name="com.example.hello.FirstFragment"/>
+        android:name="com.callor.hello.FirstFragment"
+        android:label="@string/home"/>
     <fragment android:id="@+id/bottom_nav_book"
-        android:name="com.example.hello.OldFragment"/>
-
+        android:label="@string/library"
+        android:name="com.callor.hello.OldFragment"/>
 </navigation>

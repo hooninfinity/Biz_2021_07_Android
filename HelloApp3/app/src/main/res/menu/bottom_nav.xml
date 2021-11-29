@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/bottom_nav_home"
-        android:title="Home" />
-    <item
-        android:id="@+id/bottom_nav_book"
-        android:title="도서관" />
-    <item
-        android:id="@+id/bottom_nav_todo"
-        android:title="TODO List" />
-
-
+    <item android:id="@+id/bottom_nav_home"
+        android:title="@string/home" />
+    <item android:id="@+id/bottom_nav_book"
+        android:title="@string/library" />
+    <item android:id="@+id/bottom_nav_todo"
+        android:title="@string/todo_list" />
 </menu>
