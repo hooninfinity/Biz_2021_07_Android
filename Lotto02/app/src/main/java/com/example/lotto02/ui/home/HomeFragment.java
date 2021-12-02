@@ -17,6 +17,8 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.lotto02.R;
 import com.example.lotto02.databinding.FragmentHomeBinding;
 
+import java.util.HashSet;
+
 public class HomeFragment extends Fragment {
 
     // 각각의 로또번호의 id값 호출하는 2차원 배열
@@ -59,12 +61,73 @@ public class HomeFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getContext(),"Lotto 번호를 생성했습니다", Toast.LENGTH_SHORT).show();
 
+                for (int i = 0; i < idNumbers.length; i++) {
+                    // 한벌의 로또번호 생성
+                    fillLottoNumbers();
+                    for (int j = 0; j < idNumbers[0].length; j++) {
+                        // 2차원 배열에 저장한 button의 id값으로 버튼을 찾아서
+                        Button lottoNumber = getView().findViewById(idNumbers[i][j]);
+                        // 정수를 문자로 바꾸어
+                        String str = "" + lottoNums[j];
+                        // 버튼에 번호를 표시
+                        lottoNumber.setText(str);
+                    }
+                }
             }
         });
 
         return viewGroup;
+    } // 로또번호 생성과 표시하기 위한 준비
+
+
+    // 로또번호 생성하기 위한 함수들
+    // 초기화
+    public void init() {
+        for (int i = 0; i < lottoNums.length; i++) {
+            lottoNums[i] = 0;
+        }
     }
+    // 정렬(작은 번호부터 표시되기 위해)
+    public void sort() {
+        int temp;
+        for (int i = 0; i < 5; i++) {
+            for (int j = i; j < 6; j++) {
+                if (lottoNums[i] > lottoNums[j]) {
+                    temp = lottoNums[i];
+                    lottoNums[i] = lottoNums[j];
+                    lottoNums[j] = temp;
+                }
+            }
+        }
+    }
+
+    // 로또번호를 저장할 배열을 초기화, 생성, 생성된 번호를 정렬
+    public void fillLottoNumbers() {
+        init();
+        for (int i = 0; i < 6; i++) {
+            makeLottoNumbers();
+        }
+        sort();
+    }
+
+    // HashSet 을 사용하여 중복없이 번호를 생성하기
+    public void makeLottoNumbers() {
+        HashSet<Integer> set = new HashSet<>();
+        int num;
+        for (int i = 0; i < 6;) {
+            num = (int) (Math.random() * 45 + 1);
+            if (set.add(num)) {
+                lottoNums[i++] = num;
+            }
+        }
+        set.clear();
+    }
+
+
+
+
 
 //    @Override
 //    public void onDestroyView() {
