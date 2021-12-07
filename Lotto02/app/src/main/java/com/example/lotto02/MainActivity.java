@@ -18,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
-    private FragmentManager fragmentManager;
-    private Fragment fa, fb, fc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
