@@ -34,7 +34,7 @@ public class DashboardFragment extends Fragment {
     TextView tv;
     Button bt;
     EditText et;
-    String no1, no2, no3, no4, no5, no6, bonus, drwNo;
+    String returnValue, drwNoDate, no1, no2, no3, no4, no5, no6, bonus, drwNo;
     JsonObject jsonObject;
     RequestQueue requestQueue;
 
@@ -75,20 +75,28 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onResponse(String response) {
                 jsonObject = (JsonObject) JsonParser.parseString(response);
-                no1 = "당첨번호 1 - " + jsonObject.get("drwtNo1");
-                no2 = "당첨번호 2 - " + jsonObject.get("drwtNo2");
-                no3 = "당첨번호 3 - " + jsonObject.get("drwtNo3");
-                no4 = "당첨번호 4 - " + jsonObject.get("drwtNo4");
-                no5 = "당첨번호 5 - " + jsonObject.get("drwtNo5");
-                no6 = "당첨번호 6 - " + jsonObject.get("drwtNo6");
-                bonus = "보너스 - " + jsonObject.get("bnusNo");
-                tv.setText(drwNo + "회차 당첨번호\n\n" + no1 + "\n" + no2 + "\n" + no3 + "\n" + no4
-                        + "\n" + no5 + "\n" + no6 + "\n" + bonus);
+
+                String returnValue = jsonObject.get("returnValue").getAsString();
+                tv.setText(returnValue);
+                if(returnValue.equalsIgnoreCase("fail")) {
+                    tv.setText("없는 회차입니다");
+                } else {
+                    drwNoDate = "(" + jsonObject.get("drwNoDate") + ")";
+                    no1 = "당첨번호 1 - " + jsonObject.get("drwtNo1");
+                    no2 = "당첨번호 2 - " + jsonObject.get("drwtNo2");
+                    no3 = "당첨번호 3 - " + jsonObject.get("drwtNo3");
+                    no4 = "당첨번호 4 - " + jsonObject.get("drwtNo4");
+                    no5 = "당첨번호 5 - " + jsonObject.get("drwtNo5");
+                    no6 = "당첨번호 6 - " + jsonObject.get("drwtNo6");
+                    bonus = "보너스 - " + jsonObject.get("bnusNo");
+                    tv.setText(drwNo + "회차 당첨번호\n"+ drwNoDate + "\n\n" + no1 + "\n" + no2 + "\n" + no3 + "\n" + no4
+                            + "\n" + no5 + "\n" + no6 + "\n" + bonus);
+                }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Toast.makeText(getContext(), "존재하지 않는 회차 입니다", Toast.LENGTH_SHORT).show();
             }
         }){
             @Override
